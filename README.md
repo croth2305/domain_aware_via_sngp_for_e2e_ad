@@ -15,8 +15,13 @@ Detailed architecture of the model, colors correspond to the ones used in the ba
 
 ## Acknowledgments
 SNGP Paper: https://arxiv.org/abs/2205.00403
+
 SNGP Implementation: https://github.com/y0ast/DUE http://arxiv.org/abs/2102.11409
+
 DAVE-2: http://arxiv.org/abs/1604.07316
+
 Calibration: http://arxiv.org/abs/2207.01242
+
 Pipeline from TCP: https://github.com/OpenDriveLab/TCP http://arxiv.org/abs/2206.08129
+
 CARLA AD Leaderboard: http://leaderboard.carla.org/
