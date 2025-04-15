@@ -18,17 +18,33 @@ sh code/DS/tools/gen_data.py
 ```
 using the paths specified during data collection.
 
-For training, make sure you set your hyperparameters and data paths in
-```
-sh code/DS/DS/config.py
-```
-and then run the training script
+For training, make sure you set your hyperparameters and data paths in ```code/DS/DS/config.py``` and then run the training script
 ```
 sh code/DS/DS/train-gpu.py --id  "my_own_model" --batch_size 256 --logdir "path_to_my_log_dir" --gpus 1
 ```
+The weights will be saved after every validation epoch as .pt files. :heart_eyes:
 
-### Evaluation
+### Evaluation with Calibration
+#### DATA PATHS
+In ```calibration.py``` you need to set multiple paths:
+- fitpaths: Paths to CARLA scenarios that will be used to fit the calibration GPs
+- extrapaths_carla: Paths to CARLA Towns that will be used for evaluation, make sure to include Towns not seen during training
+- extrapaths_nuscenes: Paths to nuScenes (or what ever real world data you want to use :information_desk_person:) data that will be used for evaluation
 
+#### EXTRACT DATA
+Now you will first generate the mean and standard deviations for the image normalization:
+- call the function ```get_mean_and_var_from_images(extrapaths)``` which you find somewhere around line 305 in ```carlibration.py```
+- make sure to also call the ```exit(0)``` afterwards
+Depending on the amount of CARLA data you specified, this might take very long... If necessary reduce the amount of CARLA data by removing Towns from extrapaths_carla :eyes:.
+You'll get two .pt files in /DS/calibration. Make sure two comment out the function and the ```exit(0)``` again.
+
+#### MODEL PATH
+To ```path_to_conf_file``` add the path to the .pt file of the DAVE2_SNGP model you trained. Make sure the hyperparameters in ```config.py``` are the correct ones for your chosen model. Should you be using the DAVE2_Vanilla model, make sure that your path contains the word "vanilla".
+Simply run the script with
+ ```
+python calibration.py
+```
+After running the script you should get multiple csv-files in the ```DS/calibration``` folder and additional plots.
 
 ## Acknowledgments
 SNGP Paper: https://arxiv.org/abs/2205.00403
@@ -42,3 +58,5 @@ Calibration: http://arxiv.org/abs/2207.01242
 Pipeline from TCP: https://github.com/OpenDriveLab/TCP http://arxiv.org/abs/2206.08129
 
 CARLA AD Leaderboard: http://leaderboard.carla.org/
+
+:green_heart:
