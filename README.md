@@ -44,7 +44,10 @@ Simply run the script with
  ```
 python calibration.py
 ```
-After running the script you should get multiple csv-files in the ```DS/calibration``` folder and additional plots.
+After running the script you should get multiple csv-files in the ```DS/calibration``` folder. :heart_eyes:
+
+#### PLOT LOSSES :point_right: Visualization
+You can use the notebook ```code/plot_losses.ipynb``` to process and visualize the data collected during training and evaluation. The scripts in this notebook were created during the research and might need to be updated to changed paths or data formats. Hope they still help! :innocent:
 
 ## Acknowledgments
 SNGP Paper: https://arxiv.org/abs/2205.00403
