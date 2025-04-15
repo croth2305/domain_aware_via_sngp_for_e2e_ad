@@ -29,7 +29,7 @@ The weights will be saved after every validation epoch as .pt files. :heart_eyes
 In ```calibration.py``` you need to set multiple paths:
 - fitpaths: Paths to CARLA scenarios that will be used to fit the calibration GPs
 - extrapaths_carla: Paths to CARLA Towns that will be used for evaluation, make sure to include Towns not seen during training
-- extrapaths_nuscenes: Paths to nuScenes (or what ever real world data you want to use :information_desk_person:) data that will be used for evaluation
+- extrapaths_nuscenes: Paths to nuScenes (or what ever real world data you want to use :sunglasses:) data that will be used for evaluation
 
 #### EXTRACT DATA
 Now you will first generate the mean and standard deviations for the image normalization:
