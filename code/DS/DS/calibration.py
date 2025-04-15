@@ -280,34 +280,15 @@ if __name__ == "__main__":
     # DATA PATHS
 
     fitpaths = [
-        "../DS/data/town05_short/routes_town05_short_01_04_12_17_28",
-        "../DS/data/town05_short/routes_town05_short_01_04_12_19_50",
-        "../DS/data/town05_short/routes_town05_short_01_04_12_20_26",
-        "../DS/data/town05_short/routes_town05_short_01_04_12_25_40",
-        "../DS/data/town05_short/routes_town05_short_01_04_12_27_25",
-        "../DS/data/town05_short/routes_town05_short_01_04_12_27_58",
-        "../DS/data/town05_short/routes_town05_short_01_04_12_30_21"
+     # Paths to singular CARLA scenarios used to fit the calibration GP e.g. ../data/town05_short/routes_town05_short_01_04_12_17_28
         ]
 
     extrapaths_carla = [
-        "../DS/data/town05_short",
-        "../DS/data/town02_short",
-        "../DS/data/town02_long",
-        "../DS/data/town03",
-        "../DS/data/town04",
-        "../DS/data/town01-tiny-weather",
-        "../DS/data/town01-tiny-fov140",
+     # Paths to stored CARLA Towns used for evaluation e.g. ../data/town03
         ]
     
     extrapaths_nuscenes = [
-        "/home/carlas/Experiments/NuScenesE2E/boston-seaport/day",
-        "/home/carlas/Experiments/NuScenesE2E/boston-seaport/day_rain",
-        #"/home/carlas/Experiments/NuScenesE2E/singapore-hollandvillage/day",
-        #"/home/carlas/Experiments/NuScenesE2E/singapore-hollandvillage/night",
-        #"/home/carlas/Experiments/NuScenesE2E/singapore-hollandvillage/rain_night",
-        #"/home/carlas/Experiments/NuScenesE2E/singapore-onenorth/day",
-        #"/home/carlas/Experiments/NuScenesE2E/singapore-queenstown/day",
-        #"/home/carlas/Experiments/NuScenesE2E/singapore-queenstown/night",
+     # Paths to stored nuScenes data used for evaluation e.g. ../nuscenes/boston-seaport/day
     ]
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -325,8 +306,6 @@ if __name__ == "__main__":
     #exit(0)
     img_mean = torch.load("../DS/calibration/carla_img_mean.pt")
     img_std = torch.load("../DS/calibration/carla_img_std.pt")
-    #print(img_mean, img_std)
-    #exit(0)
 
     for path_nuscenes in extrapaths_nuscenes:
         nuscenes = sorted(os.listdir(path_nuscenes))
@@ -335,16 +314,9 @@ if __name__ == "__main__":
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # MODEL PATH
-
-    #path_to_conf_file = "log/DAVE2-SNGP-GPU-10/best_model_60_loss=0.0053.pt"
-    #path_to_conf_file = "log/DAVE2-SNGP-GPU-nospecnorm-1/best_model_60_loss=0.0048.pt"
-    #path_to_conf_file = "log/DAVE2-SNGP-GPU-c5/best_model_60_loss=0.0041.pt"
-    #path_to_conf_file = "log/DAVE2-SNGP-GPU-c5and095/best_model_60_loss=0.0054.pt"
-    #path_to_conf_file = "log/DAVE2-SNGP-GPU-vanilla/best_model_60_loss=0.0078.pt"
-    #path_to_conf_file = "log/DAVE2-SNGP-GPU-noCommand/best_model_60_loss=0.0051.pt"
-    #path_to_conf_file = "log/DAVE2-SNGP-GPU-miniData/best_model_60_loss=0.1357.pt"
+    # Path to the .pt file of your trained DAVE2_SNGP or DAVE2_VANILLA model
+    # Make sure that the path contains the word "vanilla" when using DAVE2_VANILLA!
     path_to_conf_file = "log/DAVE2-SNGP-GPU-c5and095-noNorm/best_model_60_loss=0.0091.pt"
-    #path_to_conf_file = "log/DAVE2-SNGP-GPU-vanilla_noNorm/best_model_60_loss=0.0117.pt"
     
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # MODEL
@@ -689,8 +661,7 @@ if __name__ == "__main__":
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # SAVE DATA
-
-    everything.to_csv(path_or_buf="../DS/calibration/DS-c5-095_noNorm.csv", index=False)
+    everything.to_csv(path_or_buf="../DS/calibration/DS.csv", index=False)
 
     c_distributions['comma'] = c_comma 
     c_distributions['speed'] = c_speed 
