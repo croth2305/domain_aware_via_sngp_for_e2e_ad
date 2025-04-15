@@ -10,6 +10,23 @@ Collect CARLA data using the CARLA AD Leaderboard in a running CARLA 0.9.10.1 in
 ```
 sh code/DS/leaderboard/scripts/data_collection.sh
 ```
+Run the scripts
+```
+sh code/DS/tools/filter_data.py
+sh code/DS/tools/gen_data.py
+```
+using the paths specified during data collection.
+
+For training, make sure you set your hyperparameters and data paths in
+```
+sh code/DS/DS/config.py
+```
+and then run the training script
+```
+sh code/DS/DS/train-gpu.py --id  "my_own_model" --batch_size 256 --logdir "path_to_my_log_dir" --gpus 1
+```
+
+## Evaluation
 
 
 ## Acknowledgments
