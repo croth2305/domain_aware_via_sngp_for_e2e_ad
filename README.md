@@ -52,8 +52,10 @@ You can use the notebook ```code/plot_losses.ipynb``` to process and visualize t
 ## Ideas
 In case you want to continue this work, here are some topics you'd may address:
 - Not using DAVE-2 but a more complex E2E algorithm
-- Switching from RFF GP approximation to inducing point GPs, this might alliviate the need for the additional calibration (![DUE](https://arxiv.org/abs/2102.11409))
+- Switching from RFF GP approximation to inducing point GPs, this might alliviate the need for the additional calibration ([DUE][link to due])
 - Not only using nuScenes but also different real-world datasets
+
+[link to due]:https://arxiv.org/abs/2102.11409
 
 ## Acknowledgments
 SNGP Paper: https://arxiv.org/abs/2205.00403
