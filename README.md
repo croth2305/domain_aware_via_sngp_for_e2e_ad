@@ -49,6 +49,12 @@ After running the script you should get multiple csv-files in the ```DS/calibrat
 #### PLOT LOSSES :point_right: Visualization
 You can use the notebook ```code/plot_losses.ipynb``` to process and visualize the data collected during training and evaluation. The scripts in this notebook were created during the research and might need to be updated to changed paths or data formats. Hope they still help! :innocent:
 
+## Ideas
+In case you want to continue this work, here are some topics you'd may address:
+- Not using DAVE-2 but a more complex E2E algorithm
+- Switching from RFF GP approximation to inducing point GPs, this might alliviate the need for the additional calibration (![DUE](https://arxiv.org/abs/2102.11409))
+- Not only using nuScenes but also different real-world datasets
+
 ## Acknowledgments
 SNGP Paper: https://arxiv.org/abs/2205.00403
 
