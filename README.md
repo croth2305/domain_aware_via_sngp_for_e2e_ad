@@ -36,7 +36,7 @@ Now you will first generate the mean and standard deviations for the image norma
 - call the function ```get_mean_and_var_from_images(extrapaths)``` which you find somewhere around line 305 in ```carlibration.py```
 - make sure to also call the ```exit(0)``` afterwards
 Depending on the amount of CARLA data you specified, this might take very long... If necessary reduce the amount of CARLA data by removing Towns from extrapaths_carla :eyes:.
-You'll get two .pt files in /DS/calibration. Make sure two comment out the function and the ```exit(0)``` again.
+You'll get two .pt files in ```/DS/calibration```. Make sure two comment out the function and the ```exit(0)``` again.
 
 #### MODEL PATH
 To ```path_to_conf_file``` add the path to the .pt file of the DAVE2_SNGP model you trained. Make sure the hyperparameters in ```config.py``` are the correct ones for your chosen model. Should you be using the DAVE2_Vanilla model, make sure that your path contains the word "vanilla".
