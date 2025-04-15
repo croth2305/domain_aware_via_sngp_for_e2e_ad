@@ -1,5 +1,5 @@
 # domain_aware_via_sngp_for_e2e_ad
-Repository with additional information for paper "Domain Awareness via Spectral-normalized Neural Gaussian Processes for E2E Autonomous Vehicle Control".
+Repository with additional information for paper "Domain Awareness via Spectral-normalized Neural Gaussian Processes for E2E Autonomous Vehicle Control". :red_car:
 
 ## Abstract
 The ability to quantify and understand uncertainty is crucial for improving the safety and reliability of autonomous vehicle systems. In this work, we introduce a novel domain awareness mechanism for end-to-end (E2E) autonomous driving algorithms by integrating Spectral-normalized Neural Gaussian Processes (SNGP) for deterministic uncertainty quantification into an E2E trainable autonomous driving framework. The goal is to enable the model trained on simulated data from CARLA to distinguish between unseen CARLA and real-world nuScenes scenarios during inference. Our results demonstrate that, after re-calibration, the model can effectively quantify the domain gap between simulated and real-world data. We found a 13% increase in throttle uncertainty when giving our model nuScenes instead of CARLA data. Additionally our experiments show that the quality of the predicted probability distributions is not influenced by the input domain. We further highlight, that the predictive ability of the E2E model is not affected by the network alterations introduced by SNGP.
@@ -54,20 +54,22 @@ In case you want to continue this work, here are some topics you'd may address:
 - Not using DAVE-2 but a more complex E2E algorithm
 - Switching from RFF GP approximation to inducing point GPs, this might alliviate the need for the additional calibration ([DUE][link to due])
 - Not only using nuScenes but also different real-world datasets
-
-[link to due]:https://arxiv.org/abs/2102.11409
+:sunglasses:
 
 ## Acknowledgments
-SNGP Paper: https://arxiv.org/abs/2205.00403
-
-SNGP Implementation: https://github.com/y0ast/DUE http://arxiv.org/abs/2102.11409
-
-DAVE-2: http://arxiv.org/abs/1604.07316
-
-Calibration: http://arxiv.org/abs/2207.01242
-
-Pipeline from TCP: https://github.com/OpenDriveLab/TCP http://arxiv.org/abs/2206.08129
-
-CARLA AD Leaderboard: http://leaderboard.carla.org/
+- SNGP [Paper][link to sngp] and PyTorch [Implementation][link to due git]
+- [DAVE-2 Model and Paper][link to dave]
+- Calibration (GP-Normal) [Paper][link to cali] and [Implementation][link to cali git]
+- Processing Pipeline taken from [TCP][link to tcp git]
+- Data collection and evaluation using the [CARLA AD Leaderboard][link to carla]
 
 :green_heart:
+
+[link to due]:https://arxiv.org/abs/2102.11409
+[link to sngp]:https://arxiv.org/abs/2205.00403
+[link to due git]:https://github.com/y0ast/DUE
+[link to dave]:http://arxiv.org/abs/1604.07316
+[link to cali]:http://arxiv.org/abs/2207.01242
+[link to cali git]:https://github.com/EFS-OpenSource/calibration-framework/tree/main
+[link to tcp git]:https://github.com/OpenDriveLab/TCP
+[link to carla]:http://leaderboard.carla.org/
