@@ -31,7 +31,7 @@ using the paths specified during data collection.
 
 For training, make sure you set your hyperparameters and data paths in ```code/DS/DS/config.py``` and then run the training script
 ```
-python3 code/DS/DS/train-gpu.py --id  "my_own_model" --batch_size 256 --logdir "path_to_my_log_dir" --gpus 1
+python code/DS/DS/train-gpu.py --id  "my_own_model" --batch_size 256 --logdir "path_to_my_log_dir" --gpus 1
 ```
 The weights will be saved after every validation epoch as .pt files. :heart_eyes:
 
