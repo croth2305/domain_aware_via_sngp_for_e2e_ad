@@ -3,13 +3,14 @@ Repository with additional information for paper "Domain Awareness via Spectral-
 
 If you use this code please cite:
 ```
-@article{roth_domain_2025,
-	title = {Domain {Awareness} via {Spectral}-normalized {Neural} {Gaussian} {Processes} for {E2E} {Autonomous} {Vehicle} {Control}},
-	language = {en},
-	author = {Roth, Carla and Ulreich, Fabian and Ebert, Martin},
-	year = {2025},
-}
-
+@INPROCEEDINGS{11097444,
+  author={Roth, Carla and Ulreich, Fabian and Ebert, Martin},
+  booktitle={2025 IEEE Intelligent Vehicles Symposium (IV)}, 
+  title={Domain Awareness via Spectral-normalized Neural Gaussian Processes for E2E Autonomous Vehicle Control}, 
+  year={2025},
+  pages={1668-1673},
+  keywords={Uncertainty;Source coding;Gaussian processes;Predictive models;Prediction algorithms;Data models;Probability distribution;Safety;Reliability;Autonomous vehicles;deterministic uncertainty quantification;domain awareness;end-to-end autonomous driving},
+  doi={10.1109/IV64158.2025.11097444}}
 ```
 
 ## Abstract
